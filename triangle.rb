@@ -15,6 +15,10 @@
 #
 def triangle(a, b, c)
   # WRITE THIS CODE
+  raise TriangleError, "Sides must be greater than zero" if [a,b,c].min <= 0 
+
+  raise TriangleError, "Any two sides should be larger than third side" if [a,b,c].sort[0] + [a,b,c].sort[1] <= [a,b,c].sort[2]
+  
   if ((a == b) && (a == c) && (b == c))
     return :equilateral
 
